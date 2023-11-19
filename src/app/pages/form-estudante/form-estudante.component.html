@@ -1,0 +1,56 @@
+<div class="tw-flex tw-justify-center tw-items-center tw-h-screen">
+  <div class="tw-w-full tw-max-w-sm">
+
+    <!-- titulo -->
+    <h2 class="tw-text-center tw-text-2xl tw-text-gray-800 tw-font-semibold tw-mb-4">
+      {{ isUpdateMode ? 'Atualizar Estudante' : 'Cadastrar Estudante' }}
+    </h2>
+
+    <!-- forms -->
+    <form [formGroup]="options" (ngSubmit)="onSubmit()" class="tw-w-full tw-gap-5" fxLayout="column"
+      fxLayoutAlign="center center">
+
+      <!-- matricula: readonly -->
+      <mat-form-field *ngIf="isUpdateMode" appearance="fill" class="tw-w-full">
+        <mat-label>Matrícula</mat-label>
+        <input matInput placeholder="Número da matrícula" formControlName="matricula" class="tw-px-2 tw-py-1">
+      </mat-form-field>
+
+      <!-- nome do estudante -->
+      <mat-form-field appearance="fill" class="tw-w-full" [floatLabel]="getFloatLabelValue()">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="ex.: John Doe" formControlName="nome" class="tw-px-2 tw-py-1">
+        <mat-error *ngIf="options.get('nome')?.hasError('required')">
+          Nome é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="options.get('nome')?.hasError('minlength')">
+          Nome deve ter pelo menos 3 caracteres.
+        </mat-error>
+      </mat-form-field>
+
+
+      <!-- email do estudante -->
+      <mat-form-field appearance="fill" class="tw-w-full" [floatLabel]="getFloatLabelValue()">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="ex.: john.doe@example.com" formControlName="email" class="tw-px-2 tw-py-1">
+        <mat-error *ngIf="options.get('email')?.hasError('required')">
+          Email é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="options.get('email')?.hasError('email')">
+          Insira um email válido.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- enviar formulário -->
+      <button type="submit" mat-raised-button color="primary" class="tw-w-full tw-mt-4">
+        Enviar
+      </button>
+
+      <!-- voltar para a tela de listagem (home) -->
+      <a class="tw-w-full" mat-raised-button color="accent" [routerLink]="['/']" routerLinkActive="active"
+        ariaCurrentWhenActive="page">
+        Voltar
+      </a>
+    </form>
+  </div>
+</div>
