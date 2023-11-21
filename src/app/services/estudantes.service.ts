@@ -24,8 +24,7 @@ export class EstudantesService {
   }
 
   private gerarNumeroMatricula(): number {
-    // Gerar um número randômico para a matrícula
-    // Exemplo: Gerar um número entre 100000 e 999999
+    // Gera um número entre 100000 e 999999
     return Math.floor(100000 + Math.random() * 900000);
   }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
-import { ModalComponent } from 'src/app/components/feedback-modal/modal.component';
+import { ErrorModalComponent } from 'src/app/components/error-modal/error-modal.component';
+import { FeedbackModalComponent } from 'src/app/components/feedback-modal/modal.component';
 import { SuccessModalComponent } from 'src/app/components/success-modal/success-modal.component';
 import { Estudante } from 'src/app/models/estudante';
 import { EstudantesService } from 'src/app/services/estudantes.service';
@@ -60,20 +61,33 @@ export class ListaEstudanteComponent implements OnInit {
   }
 
   excluirEstudante(estudante: Estudante): void {
-    this.estudantesService.excluirEstudante(estudante.id).subscribe(() => {
-      this.buscarEstudantes();
-      this.dialog.open(SuccessModalComponent, {
-        data: {
-          estudante,
-          title: 'Sucesso!',
-          description: `O Estudante: ${estudante.nome} foi excluído com sucesso.`,
-        },
-      });
+    this.estudantesService.excluirEstudante(estudante.id).subscribe({
+      next: () => {
+        this.buscarEstudantes();
+        this.dialog.open(SuccessModalComponent, {
+          data: {
+            estudante,
+            title: 'Sucesso!',
+            description: `O Estudante: ${estudante.nome} foi excluído com sucesso.`,
+          },
+        });
+      },
+      error: (error) => {
+        this.dialog.open(ErrorModalComponent, {
+          data: {
+            title: 'oh não!',
+            description: `Tivemos um problema para excluir os dados do estudante:${estudante.nome}. verifique o console para mais detalhes`,
+          },
+        });
+        console.error(
+          `erro ao excluir os dados do estudante:${estudante.nome} \n motivo: ${error.message}`
+        );
+      },
     });
   }
 
   openDialog(estudante: Estudante): void {
-    const dialogRef = this.dialog.open(ModalComponent, {
+    const dialogRef = this.dialog.open(FeedbackModalComponent, {
       data: {
         estudante,
         title: 'Excluir Estudante',

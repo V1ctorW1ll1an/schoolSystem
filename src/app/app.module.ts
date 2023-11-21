@@ -17,7 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModalComponent } from './components/feedback-modal/modal.component';
+import { FeedbackModalComponent } from './components/feedback-modal/modal.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 import { FormEstudanteComponent } from './pages/form-estudante/form-estudante.component';
 import { ListaEstudanteComponent } from './pages/lista-estudante/lista-estudante.component';
@@ -28,7 +28,7 @@ import { ErrorModalComponent } from './components/error-modal/error-modal.compon
     AppComponent,
     ListaEstudanteComponent,
     FormEstudanteComponent,
-    ModalComponent,
+    FeedbackModalComponent,
     SuccessModalComponent,
     ErrorModalComponent,
   ],

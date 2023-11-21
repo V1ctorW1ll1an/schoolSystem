@@ -5,9 +5,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   selector: 'app-modal',
   templateUrl: './modal.component.html',
 })
-export class ModalComponent {
+export class FeedbackModalComponent {
   constructor(
-    public dialogRef: MatDialogRef<ModalComponent>,
+    public dialogRef: MatDialogRef<FeedbackModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 }

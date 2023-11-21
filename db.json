@@ -1,30 +1,6 @@
 {
   "estudantes": [
     {
-      "id": 6,
-      "nome": "Estudante 6",
-      "matricula": 2021006,
-      "email": "estudante6@exemplo.com"
-    },
-    {
-      "id": 7,
-      "nome": "Estudante 7",
-      "matricula": 2021007,
-      "email": "estudante7@exemplo.com"
-    },
-    {
-      "id": 8,
-      "nome": "Estudante 8",
-      "matricula": 2021008,
-      "email": "estudante8@exemplo.com"
-    },
-    {
-      "id": 9,
-      "nome": "Estudante 9",
-      "matricula": 2021009,
-      "email": "estudante9@exemplo.com"
-    },
-    {
       "id": 10,
       "nome": "Estudante 10",
       "matricula": 2021010,
@@ -49,12 +25,6 @@
       "email": "estudante13@exemplo.com"
     },
     {
-      "id": 14,
-      "nome": "Estudante 14",
-      "matricula": 2021014,
-      "email": "estudante14@exemplo.com"
-    },
-    {
       "id": 15,
       "nome": "Estudante 15",
       "matricula": 2021015,
@@ -65,12 +35,6 @@
       "nome": "Estudante 16",
       "matricula": 2021016,
       "email": "estudante16@exemplo.com"
-    },
-    {
-      "id": 17,
-      "nome": "Estudante 17",
-      "matricula": 2021017,
-      "email": "estudante17@exemplo.com"
     },
     {
       "id": 18,
@@ -577,6 +541,22 @@
       "floatLabel": "auto",
       "matricula": 468403,
       "id": 101
+    },
+    {
+      "nome": "victor",
+      "email": "victor@teste.com.br",
+      "hideRequired": false,
+      "floatLabel": "auto",
+      "matricula": 843746,
+      "id": 102
+    },
+    {
+      "nome": "victor teste nao sei mais qual numero do teste",
+      "email": "teste@teste.com.br",
+      "hideRequired": false,
+      "floatLabel": "auto",
+      "matricula": 307287,
+      "id": 103
     }
   ]
 }
